@@ -5,14 +5,8 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        
-        #Two Sum Using Enumerate Function
-        num_index = {}
-        for i, num in enumerate(nums):
-            compliment = target - num
-
-            if compliment in num_index:
-                return [num_index[compliment],i]
-            num_index[num] = i
-        
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i,j]
         
